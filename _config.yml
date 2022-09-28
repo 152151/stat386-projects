@@ -20,7 +20,7 @@
 
 title: Nano Carter's Blog # Make a title for your blog
 email: nanocarter9@hotmail.com # Add your email 
-description:This is my blog
+description: This is my blog
 baseurl: "/stat386-projects" # keep this the same or change it to the name of the repository 
 url: "https://152151.github.io" #  change this to "https://<your-github-username>.github.io"
 image: "assets/images/image5.jpg"
