@@ -5,5 +5,5 @@ permalink: /about/
 ---
 
 # About Me
-This is a blog post about me.
+This is a blog about me.
 https://152151.github.io/stat386-projects/
