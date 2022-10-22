@@ -31,7 +31,6 @@ I used list comprehensions to get my data as well as soup.find_all where I found
 ```
 rank = soup.find_all(class_='rank-cell border-left-4 border-right-dash-1')
 rank1 = [i.string for i in rank]
-
 ```
 After getting the data from the ATP Tour website I got data from tennis explorer which was on multiple urls and my code probably is very inefficent but I stil got the data I wanted. There were many more things I did to clean the data into the dataframe I wanted but to keep this post short I won't go into details.
 
