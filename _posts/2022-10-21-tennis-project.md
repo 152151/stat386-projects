@@ -32,9 +32,9 @@ I used list comprehensions to get my data as well as soup.find_all where I found
 rank = soup.find_all(class_='rank-cell border-left-4 border-right-dash-1')
 rank1 = [i.string for i in rank]
 ```
-After getting the data from the ATP Tour website I got data from tennis explorer which was on multiple urls and my code probably is very inefficent but I stil got the data I wanted. There were many more things I did to clean the data into the dataframe I wanted but to keep this post short I won't go into details.
+After getting the data from the ATP Tour website I got data from tennis explorer which was on multiple urls and my code probably is very inefficent but I stil got the data I wanted. There were many more things I did to clean the data into the dataframe I wanted but to keep this post short I won't go into details. My dataframe ended up looking like this.
 
-![Figure](https://raw.githubusercontent.com/152151/stat386-projects/main/assets/images/Screenshot%20(48).png)
+![Figure](https://github.com/152151/stat386-projects/blob/main/assets/images/Screenshot%20(62).png)
 
 ### Ethics
 I believe it was legal to web scrape based on the discussion we had in class which told me that it was most likely legal based off of a Supreme Court ruling. One website kicked me off their website for web scraping and I didn't obtain data from that website which is a way to know if it's ethical. I went to the robots.txt for the ATP Tour website and it is kind of debateable whether they want people to be webscraping what I webscraped but I think because it is public and easily found data it is ethical. The robots.txt on the tennisxplorer website seems to allow webscraping the data which I did.
