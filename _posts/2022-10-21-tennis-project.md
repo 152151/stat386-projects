@@ -7,63 +7,45 @@ description: This is my project about tennis data
 image: /assets/images/blog-image.jpg
 ---
 
-# Scatterplots in Excel
-### You might not think of Excel when thinking about Data Science but Excel can make scatterplots that are useful for Data Science
+# Top ATP 250 Players
+### For this project I found data for the top ATP 250 tennis players which was moderately difficult but even more difficult was figuring out what data I wanted.
 ### Introduction
-Most people that work in Data Science use Python or R when they import data and create a scatterplot. But, Excel also has the ability to make scatterplots that have value for those that work in Data Science because of how easy it is to make them, and because they extract values such as R-squared and the equation of a line with the click of a button. In R and Python knowledge of programming is required which is another reason why Excel has an advantage over R and Python especially for those that are just learning to program in those languages.
+I have played tennis for a long time and I am interested in the ATP which is why I chose to obtain this data. At first I wanted to obtain more interesting data but it seemed to be challenging to obtain. For example I could have obtained information about the best servers in tennis from a table and added new columns to it. I think I was worried I wouldn't be able to easily get more information about the same players which is why I gave up on this kind of data. It also was simply hard to choose what data to obtain when there were so many choices but no choice being the obvious choice. I chose data about the top 250 ATP players because I knew there would be infromation such as country from a different data source.
 
-### Importing Txt File
-  For this blog post I imported a txt file called MPGData from my Stat 330 class. The x variable is weight of car and the y axis is mpg. To import this file I downloaded the file and then went to the Data tab, clicked on Get Data, then clicked on From File, and finally clicked on From Text/CSV where I found the file and imported it. Then I clicked Load to load the data into the worksheet. After importing the txt file my sheet looked like the image below.
+### Obtaining Final Data Set
+To obtain the final data set I got information from two sources. I scraped the ATP Tour website and a website called tennis explorer. Most of the data comes from the ATP Tour website while one column comes from the tennis explorer website. I faced some challenges getting this Data Set. One of the challenges was that many websites didn't have enough players in their rankings. Another challenge was that some had a load more button which I don't know how to deal with. One different challenge was that some websites didn't have the country of Russian players becuase they aren't allowed to represent Russia currently.
+
+### Details of Obtaining Data Set
+I used BeautifulSoup to obtain my dataset. I don't have much experience with APIs which is why I decided to use Beautiful Soup and used code that should be very familiar.
+```
+import pandas as pd
+import numpy as np
+from bs4 import BeautifulSoup
+import requests
+import re
+r = requests.get(url)
+r.status_code
+soup = BeautifulSoup(r.content, 'html.parser')
+```
+I used list comprehensions to get my data as well as soup.find_all where I found specific classes such as the code below.
+```
+rank = soup.find_all(class_='rank-cell border-left-4 border-right-dash-1')
+rank1 = [i.string for i in rank]
+
+```
+After getting the data from the ATP Tour website I got data from tennis explorer which was on multiple urls and my code probably is very inefficent but I stil got the data I wanted. There were many more things I did to clean the data into the dataframe I wanted but to keep this post short I won't go into details.
 
 ![Figure](https://raw.githubusercontent.com/152151/stat386-projects/main/assets/images/Screenshot%20(48).png)
 
-### Selecting Data
-  The first chart that I will make is a scatterplot which is a commonly used chart for Data Science. To do this I need to select all of the data. An easy way to select all of the data is to select the column names and then do Ctrl+Shift+Down which will select all of the data.
-### Recommended Charts
- It is very easy to create a scatterplot in Excel if you have the right data. For this data all I have to do to create a scatterplot is click Insert and then click on Recommended Charts where one of the recommended charts is a scatterplot which once I click on Ok is created. If clicking on Recommended Charts doesn't give the chart you are looking for you can look to the different charts to the right of Recommended Charts.
- 
- ![Figure](https://raw.githubusercontent.com/152151/stat386-projects/main/assets/images/Screenshot%20(49).png)
- 
- ![Figure](https://raw.githubusercontent.com/152151/stat386-projects/main/assets/images/Screenshot%20(50).png)
- 
-### Chart Options
-  This is a very basic scatterplot so now I will talk about different options for this scatterplot. Once I click on the chart I see the Chart Elements button which has elements such as Axes, Axis Titles, Chart Title, Data Labels, Error Bars, Gridlines, Legend, and Trendline. There are also Chart Styles, and Chart Filters which I won't go into in this post but they are useful options just like the Chart Elements button.
-  
-![Figure](https://raw.githubusercontent.com/152151/stat386-projects/main/assets/images/Screenshot%20(52).png)
+### Ethics
+I believe it was legal to web scrape based on the discussion we had in class which told me that it was most likely legal based off of a Supreme Court ruling. One website kicked me off their website for web scraping and I didn't obtain data from that website which is a way to know if it's ethical. I went to the robots.txt for the ATP Tour website and it is kind of debateable whether they want people to be webscraping what I webscraped but I think because it is public and easily found data it is ethical. The robots.txt on the tennisxplorer website seems to allow webscraping the data which I did.
 
-  I will name the scatterplot Weight vs MPG and click on the Axis Titles option where I will name the y-axis MPG and the x-axis Weight. I didn't think that including Data Labels made sense because it looks like this.
-  
-![Figure](https://raw.githubusercontent.com/152151/stat386-projects/main/assets/images/Screenshot%20(55).png)
-
-  In my opinion there are too many points to have Data Labels. I also don't think using error bars makes sense. Using gridlines or not is a personal choice but I chose to not use gridlines. I chose to not use a legend and added a trendline.
-  
-![Figure](https://raw.githubusercontent.com/152151/stat386-projects/main/assets/images/Screenshot%20(56).png)
-
-  Each chart element has more options which can be found by clicking on the plus button, clicking on the arrow to the right of each element, and then clicking on more options.
-  
-![Figure](https://raw.githubusercontent.com/152151/stat386-projects/main/assets/images/Screenshot%20(58).png)
-
-### Trendline Options
-  I think exploring the trendline options will be the most useful for this class. This is what it looks like after clicking on more options for trendlines.
-  
-  ![Figure](https://raw.githubusercontent.com/152151/stat386-projects/main/assets/images/Screenshot%20(59).png)
-  
-There are exponential, linear, logarithmic, polynomial, power, and moving average. I have chosen the linear option. To forecast outside the data points typing in a value in the forward and/or backward options will extend the line outside of the data points which I did by typing in 1000 points for the forward and backward options.
-
-![Figure](https://raw.githubusercontent.com/152151/stat386-projects/main/assets/images/Screenshot%20(60).png)
-
-### Equation of the Line and R-squared
-Clicking on Display Equation on chart shows the equation of the line on the chart and in this case it is y = -0.0098x + 51.587. The R-squared can be shown by clicking Display R-squared value on chart. The R-squared is 0.5048 for this line.
-
-![Figure](https://raw.githubusercontent.com/152151/stat386-projects/main/assets/images/Screenshot%20(61).png)
 
 ### Conclusion
-I hope that I have shown that there is value in using Excel for Data Science. Of course R and Python can be used to create scatterplots but I think there are times when making a scatterplot in Excel makes sense and times when it makes more sense to make it in R and Python.
+I am going to try and extract as much interesting information as I can from this dataset. I will try and find unexpected results so that my exploratory data analyis has good insights. This might only be interesting to those that play or watch tennis but I will do my best with the data I obtained.
 
-### Sources
-Link to Youtube video from IS 515 and link to MPG Data
-<a href="https://www.youtube.com/watch?v=2jJ3OumXeqA"> Charts
-<a href="https://byu.app.box.com/s/6czoc6o6pbg1tdz5wsj8hlb6y1r81hnt"> MPG Data
+### Link to GitHub repo
+
 
  
  
