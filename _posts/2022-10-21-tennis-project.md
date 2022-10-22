@@ -41,7 +41,7 @@ After getting the data from the ATP Tour website I got data from tennisexplorer 
 I believe it was legal to scrape based on the discussion we had in class which told me that it was most likely legal because of a Supreme Court ruling. One website kicked me off their website for web scraping and I didn't obtain data from that website which is a potential way to know if it's ethical/legal. I went to the robots.txt for the ATP Tour website and it is kind of debatable whether they want people to be webscraping what I webscraped but I think because it is public and easily found data it is ethical and legal. The robots.txt on the tennisxplorer website seems to allow webscraping the data which I did.
 
 ### Conclusion
-I am going to try and extract as much interesting information as I can from this dataset. I will try and find unexpected results so that my exploratory data analyis has good insights. This might only be interesting to those that play or watch tennis but I will do my best with the dataset I obtained.
+I am going to try and extract as much interesting information as I can from this dataset. I will try and find unexpected results so that my exploratory data analyis has good insights. This might only be interesting to those that play or watch tennis but I will do my best with the data set I obtained.
 
 ### Link to GitHub repo
 
