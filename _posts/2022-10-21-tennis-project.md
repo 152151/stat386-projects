@@ -16,7 +16,7 @@ I have played tennis for a long time and I am interested in the ATP which is why
 To obtain the final data set I got information from two sources. I scraped the ATP Tour website and a website called tennis explorer. Most of the data comes from the ATP Tour website while one column comes from the tennis explorer website. I faced some challenges getting this Data Set. One of the challenges was that many websites didn't have enough players in their rankings. Another challenge was that some had a load more button which I don't know how to deal with. One different challenge was that some websites didn't have the country of players from Russia becuase they aren't allowed to represent Russia currently.
 
 ### Details of Obtaining Data Set
-I used BeautifulSoup to obtain my dataset. I don't have much experience with APIs which is why I decided to use Beautiful Soup and used code that should be very familiar.
+I used BeautifulSoup to obtain my dataset. I don't have much experience with APIs which is why I decided to use Beautiful Soup and used code that should be familiar.
 ```
 import pandas as pd
 import numpy as np
