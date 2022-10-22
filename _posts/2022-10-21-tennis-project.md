@@ -34,7 +34,7 @@ rank1 = [i.string for i in rank]
 ```
 After getting the data from the ATP Tour website I got data from tennis explorer which was on multiple urls and my code probably is very inefficent but I stil got the data I wanted. There were many more things I did to clean the data into the dataframe I wanted but to keep this post short I won't go into details. My dataframe ended up looking like this.
 
-[!Figure](https://raw.githubusercontent.com/152151/stat386-projects/main/assets/images/Table.png)
+![Figure](https://raw.githubusercontent.com/152151/stat386-projects/main/assets/images/Table.png)
 
 
 
